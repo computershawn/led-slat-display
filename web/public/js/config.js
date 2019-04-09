@@ -30,3 +30,6 @@ let arrayToSend;
 let connected = false;
 
 let animationMode = 1;
+
+
+let socket;

@@ -4,7 +4,9 @@ function transpose(arr) {
 
 
 function startWebSocketThings() {
-  connection = new WebSocket("ws://" + host + ":" + port + "/")
+  let websocketURL = `wss://${host}:${port}/`;
+  console.log("WebSocket URL: " + websocketURL);
+  connection = new WebSocket(websocketURL)
   // connection.onmessage = function (event) {
   //     console.log("Server says: " + event.data);
   // };

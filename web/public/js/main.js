@@ -14,8 +14,10 @@ function setup() {
   // ...
   byteArr = new Uint8Array(LEDS_PER * NUM_STRIPS * colorMode);
   //host = 'localhost';
-  host = '10.0.1.27';
-  port = '5678';
+  //host = '10.0.1.27';
+  host = '127.0.0.1';
+  //port = '5678';
+  port = '8080';
 
   let wd = 320;
   let ht = 320;
@@ -28,6 +30,9 @@ function setup() {
   for(let i = 0; i < NUM_STRIPS; i++) {
     strips.push(new Strip(i));
   }
+
+
+//socket = io();
 
   // ...
   tick = 0;
@@ -86,8 +91,4 @@ function play() {
     // Send the data!
     connection.send(byteArr.buffer);
   }
-}
-
-function myFunction() {
-  alert("fuck yeah!")
 }
